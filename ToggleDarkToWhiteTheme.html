@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dark Theme to White Theme</title>
+    <style>
+        h2{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: larger;
+            text-align: center;
+        }
+
+        button{
+            font-size: larger;
+            padding: 10px;
+
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+        .div1{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Toggle LightTheme to DarkTheme</h2>
+    <div id="themeContainer" class="div1" style="padding: 20px;">
+        <h1 id="heading">Welcome To Theme Switcher</h1>
+    </div>
+    <div class="btn">
+        <button id="themeToggleButton">Switch to DarkTheme</button>
+    </div>
+
+    <script>
+        const color = document.getElementById('themeContainer');
+        const heading = document.getElementById('heading');
+        const toggleBtn = document.getElementById('themeToggleButton')
+
+        toggleBtn.addEventListener('click', () => {
+            const CurrentColor = color.style.backgroundColor;
+            const textColor = heading.style.color;
+            if(CurrentColor === 'white') {
+                color.style.backgroundColor = 'black';
+                heading.style.color = 'white'
+                toggleBtn.textContent = "Switch to White Theme "
+            }else {
+                color.style.backgroundColor = 'white';
+                heading.style.color = 'black'
+                toggleBtn.textContent = "Switch to Dark Theme "
+            }
+        })
+    </script>
+</body>
+</html>

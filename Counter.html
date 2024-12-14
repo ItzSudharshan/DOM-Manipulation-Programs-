@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Counter Program</title>
+    <style>
+        .head{
+            text-align: center;
+        }
+        button {
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 10px 10px;
+            border: 10px groove black;
+            cursor: pointer;
+            margin-left: 30px;
+
+        }
+        h2{
+            text-align: center;
+        }
+        .btnContainer {
+        display: flex;
+        justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter Program Practise in Js </h1>
+    <h2 id="head">0</h2>
+<div class="btnContainer">
+    <button onclick="increase()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="Reset()">Reset</button>
+</div>
+    <script>
+        let counter = 0;
+
+        function updateCount() {         
+        let target = document.getElementById('head');
+        target.textContent = counter;
+
+        }
+
+        function increase() {
+            counter++;
+            updateCount();
+        }
+
+        function decrement() {
+            counter--;
+            updateCount();
+        }
+
+        function Reset() {
+            counter = 0;
+            updateCount();
+        }
+    </script>
+</body>
+</html>

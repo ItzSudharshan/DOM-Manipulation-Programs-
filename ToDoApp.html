@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ToDo App By Javascript</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 100px;
+            color: darkorchid;
+        }
+
+        body{
+            background-color: bisque;
+        }
+
+        button{
+           margin-left: 10px;
+           font-size: x-large;
+           border-radius: 10px;
+           border-style: groove;
+           border-color: orange;
+           padding: 10px;
+           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+           cursor: pointer;
+        }
+
+        .btn{
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+        }
+
+        input{
+            border-radius: 10px;
+            font-size: xx-large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            cursor:pointer;
+            border-color: orange;
+        }
+        li{
+            font-size: x-large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            list-style-type: disc
+            
+        
+        }
+        .list1 {
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            
+        }
+        .rembtn{
+            border-color: brown;
+            margin-left: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>ToDo App Add Your Tasks</h1>
+   
+    <div class="btn">
+        <input type="text" id = "in" placeholder="Enter Tasks">
+        <button class ="btn" onclick="addtask()">Add Task</button>
+
+    </div>
+    <div class="list1">
+    <ol id="list">
+            
+    </ol>
+    </div>
+    <script>
+        function addtask() {
+            // Getting input from user
+            let inputTask = document.getElementById('in');
+            let inputValue = inputTask.value;
+        
+            if (inputValue == '') {
+                alert("Please Enter the Task!!!");
+            } else {
+                // Create button to remove tasks
+                let remTaskButton = document.createElement('button');
+                remTaskButton.textContent = "Remove Task";
+                remTaskButton.className = "rembtn";
+        
+                // Create a list item for the task
+                let taskList = document.createElement('li');
+                taskList.textContent = inputValue;
+        
+                // Append remove button to the task list item
+                taskList.appendChild(remTaskButton);
+        
+                remTaskButton.addEventListener('click', () => {
+                    taskList.remove();
+                });
+
+                //final elemnt u have to add it to parent class which is ol
+        
+                let finalList = document.getElementById('list');
+                finalList.append(taskList);
+        
+                inputTask.value = '';
+            }
+        }
+    </script>
+    
+</body>
+</html>
+
+

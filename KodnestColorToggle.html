@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toggle Color From red to Blue Vice Versa</title>
+    <style>
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 100px;
+            text-align: center;
+        }
+        button{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: x-large;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Toggle Color Using Js</h1>
+    <div id = "box" 
+    class="boxStyle"
+    
+    style="width: 100px; height: 100px; background-color: red;">
+    </div>
+    <button id = "toggle">Click Here to Toggle Color!</button>
+
+
+    <script>
+        let getColor = document.getElementById('box');
+        let getToggleButton = document.getElementById('toggle');
+
+        getToggleButton.addEventListener('click', () => {
+            let currentColor = getColor.style.backgroundColor;
+            if( currentColor === 'red'){
+                getColor.style.backgroundColor = 'blue';
+            }else {
+                getColor.style.backgroundColor = 'red';
+            }
+        })
+    </script>
+</body>
+</html>

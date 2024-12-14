@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IncrementDecrementResetCounter</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        h2{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .counter{
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+        }
+        
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            border-color: brown;
+            border-style: groove;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: x-large;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Simple Counter Application</h1>
+    <div class="counter">
+        <button id="increment" class="add">Increment(+)</button>
+        <button id="decrement" class="sub">Decrement(-)</button>
+        <button id="reset" class="reset">Reset</button>
+    </div>
+    <h2 id="result">0</h2>
+
+    <script>
+        let counter = 0;
+        let IncrBtn = document.getElementById('increment');
+        let DecreBtn = document.getElementById('decrement');
+        let reseTBtn = document.getElementById('reset');
+
+        function updateValue(){
+            let targetResult  = document.getElementById('result');
+            targetResult.textContent = counter;
+        }
+        IncrBtn.addEventListener('click', () => {
+            counter++;
+            updateValue();
+        })
+
+        DecreBtn.addEventListener('click', () => {
+            counter--;
+            updateValue();
+        })
+
+        reseTBtn.addEventListener('click', () => {
+            counter = 0;
+            updateValue();
+        })
+
+
+    </script>
+    
+</body>
+</html>

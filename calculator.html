@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        h1{
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          color: blueviolet;
+          text-align: center;
+        }
+        input{
+            font-size: 25px;
+            border-radius: 10px;
+        }
+        .add{
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 50px;
+        }
+        ::placeholder{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        button{
+            font-size: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            border-style: groove;
+            padding: 10px;
+            border-color: palegoldenrod;
+            border-style:outset;
+            margin: 10px;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+
+        }
+        h2{
+            text-align: center;
+            color: blueviolet;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Calculator Using Java Script</h1>
+    <div class="add">
+    <input type="text" id="in1" placeholder="Num1">
+    <input type="text" id="in2" placeholder="Num2">
+    </div>
+    <div class="btn">
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">/</button>
+    </div>
+    <h2 id="result"></h2>
+<script>
+    let result = document.getElementById('result');
+    function add() {
+       
+
+        let num1 = Number(document.getElementById('in1').value);
+        let num2 = Number(document.getElementById('in2').value);
+        
+        let addRes = num1 + num2;
+
+        result.innerText = `The Sum of ${num1} and ${num2} is ${addRes}`;
+        
+    }
+
+    function sub() {
+       
+
+        let num1 = Number(document.getElementById('in1').value);
+        let num2 = Number(document.getElementById('in2').value);
+        
+        let addRes = num1 - num2;
+
+        result.innerText = `The difference of ${num1} and ${num2} is ${addRes}`;
+        
+    }
+
+    function mul() {
+       
+
+        let num1 = Number(document.getElementById('in1').value);
+        let num2 = Number(document.getElementById('in2').value);
+        
+        let addRes = num1 * num2;
+
+        result.innerText = `The Multiplication  of ${num1} and ${num2} is ${addRes}`;
+        
+    }
+
+    function div() {
+       
+
+        let num1 = Number(document.getElementById('in1').value);
+        let num2 = Number(document.getElementById('in2').value);
+        
+        let addRes = num1 / num2;
+
+        result.innerText = `The division  of ${num1} and ${num2} is ${addRes}`;
+        
+    }
+</script>
+</body>
+</html>

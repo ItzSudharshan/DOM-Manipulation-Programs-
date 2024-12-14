@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create and add Tag HTML </title>
+</head>
+<body>
+    <p class="p">Para1</p>
+    <p class="p">Para2</p>
+    <p class="p">Para3</p>
+</body>
+<script>
+    let ele = document.createElement('p');
+    ele.textContent = "Para4";
+
+    ele.className = "p";
+
+    document.body.appendChild(ele);
+
+</script>
+</html>

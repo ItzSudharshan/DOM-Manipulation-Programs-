@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Allows Users to Dynamically Add Element to Shopping list</title>
+    <style>
+        h1{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: x-large;
+            text-align: center;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            margin-left: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-color: brown;
+        }
+        input{
+            font-size: x-large;
+            border-radius: 10px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add and Remove Items To Shopping List</h1>
+
+    <div id="List">
+        <input type="text" id="in1" placeholder="Add Shopping Items">
+        <button id="btn">ADD</button>
+    </div>
+    <div>
+        <ul id="ShoppingList"></ul>
+    </div>
+    <script>
+        let targetText = document.getElementById('in1');
+        let targetBtn = document.getElementById('btn');
+
+        targetBtn.addEventListener('click', () => {
+            // Create the list item
+            let list = document.createElement('li');
+            let value = targetText.value.trim();
+
+            if (value === '') {
+                alert("Please enter an item!");
+                return;
+            }
+
+            list.textContent = value;
+
+            // Create the remove button
+            let remButton = document.createElement('button');
+            remButton.textContent = "REMOVE";
+            remButton.classList.add("removeBtn");
+
+            list.appendChild(remButton);
+
+            let parent = document.getElementById('ShoppingList');
+            parent.appendChild(list);
+
+            remButton.addEventListener('click', () => {
+                list.remove();
+            });
+
+            targetText.value = '';
+        });
+    </script>
+</body>
+</html>
